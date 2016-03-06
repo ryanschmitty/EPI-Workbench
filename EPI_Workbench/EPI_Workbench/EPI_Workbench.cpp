@@ -23,7 +23,7 @@ Node* AllocateList(int size)
     
     // Create remainder of list
     Node* pCur = pHead;
-    for (size_t i = 1; i < size; i++)
+    for (int i = 1; i < size; i++)
     {
         // Allocate new node
         pCur->next = new Node;
