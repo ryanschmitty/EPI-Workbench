@@ -144,6 +144,10 @@
   <ItemGroup>
     <ClCompile Include="EPI_Workbench.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bitwise.h" />
+    <ClInclude Include="Zippering.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

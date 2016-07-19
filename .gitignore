@@ -234,3 +234,4 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/EPI_Workbench/EPI_Workbench/EPI_Workbench.VC.db
