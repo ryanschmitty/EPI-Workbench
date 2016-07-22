@@ -26,5 +26,11 @@
     <ClInclude Include="Bitwise.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter6.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter5.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
