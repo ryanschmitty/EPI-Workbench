@@ -41,12 +41,5 @@
 
 int main()
 {
-    std::vector<int> stocks{ 310, 315, 275, 295, 260, 270, 290, 230, 255, 250 };
-    std::vector<int> vec1{1};
-    auto length = longestSubarrayLength(vec1);
-    std::vector<int> vec2{1,1};
-    length = longestSubarrayLength(vec2);
-    std::vector<int> vec3{1,1,0,0,0,1,2,3};
-    length = longestSubarrayLength(vec3);
     return 0;
 }

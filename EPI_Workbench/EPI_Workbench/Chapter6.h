@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <random>
 
 // 6.1, dutch national flag
 template <typename T>
@@ -70,4 +71,50 @@ int longestSubarrayLength(const std::vector<int>& vec)
     }
 
     return longestLength;
+}
+
+// 6.12, sample offline data
+// rand() isn't very good, and % N only really even comes close to working if RAND_MAX is evenly divisible by N (think of shrinking down the input into unevenly sized buckets)
+template <typename T>
+std::vector<T> sample(std::vector<T>& vec, const size_t length)
+{
+    if (vec.empty()) return;
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    size_t remainder = vec.size();
+    for (size_t i = 0; i < length-1; ++i)
+    {
+        size_t chosenIndex = std::uniform_int_distribution<T>(i, remainder - 1)(gen);
+        std::swap(vec[i], vec[i + chosenIndex]);
+    }
+}
+
+// 6.18, Compute Spiral Ordering
+std::vector<int> spiralOrdering(const std::vector<std::vector<int>>& cube)
+{
+    std::vector<int> spiralOrder{};
+    size_t start = 0;
+    size_t total = (cube.size()-(2*start)-1) * 4;
+    while (2*start < cube.size()-1)
+    {
+        size_t x = start, y = start;
+        // top
+        for (; x < (total/4)+start; ++x)
+            spiralOrder.push_back(cube[x][y]);
+        // right
+        for (; y < (total/4)+start; ++y)
+            spiralOrder.push_back(cube[x][y]);
+        // bottom
+        for (; x > start; --x)
+            spiralOrder.push_back(cube[x][y]);
+        // left
+        for (; y > start; --y)
+            spiralOrder.push_back(cube[x][y]);
+        start += 1;
+        total = (cube.size()-(2*start)-1) * 4;
+        if (total == 0) spiralOrder.push_back(cube[start][start]);
+    }
+    return spiralOrder;
 }
