@@ -118,3 +118,26 @@ std::vector<int> spiralOrdering(const std::vector<std::vector<int>>& cube)
     }
     return spiralOrder;
 }
+
+std::vector<int> incrementArbitraryPrecisionInteger(const std::vector<int>& vec)
+{
+    std::vector<int> result = vec;
+    for (int i = static_cast<int>(vec.size()) - 1; i >= 0; --i)
+    {
+        if (result[i] == 9)
+        {
+            result[i] = 0;
+            if (i == 0)
+            {
+                result.insert(result.begin(), 1);
+            }
+            continue;
+        }
+        else
+        {
+            ++result[i];
+            break;
+        }
+    }
+    return result;
+}

@@ -148,6 +148,7 @@
     <ClInclude Include="Bitwise.h" />
     <ClInclude Include="Chapter6.h" />
     <ClInclude Include="Chapter5.h" />
+    <ClInclude Include="Chapter7.h" />
     <ClInclude Include="Zippering.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
