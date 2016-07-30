@@ -35,5 +35,17 @@
     <ClInclude Include="Chapter7.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter8.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter9.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter10.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter11.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

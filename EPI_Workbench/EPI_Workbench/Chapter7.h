@@ -45,7 +45,7 @@ std::string baseConvert(std::string& s, int b1, int b2)
 }
 
 // 7.4
-int replaceAndRemove(size_t size, char s[])
+size_t replaceAndRemove(size_t size, char s[])
 {
     /* O(n^2) (insertions and deletions are O(n))
     for (auto& v = vec.begin(); v != vec.end();)
@@ -80,7 +80,30 @@ int replaceAndRemove(size_t size, char s[])
     */
 
     // forward iteration to remove b's and count a's
+    size_t numAs = 0;
+    size_t writeIdx = 0;
+    for (size_t i = 0; i < size; ++i)
+    {
+        if (s[i] == 'a')
+            ++numAs;
+        if (s[i] != 'b')
+            s[writeIdx++] = s[i];
+    }
+    size_t curLastIndex = writeIdx - 1;
+
     // backward iteration to convert a's to dd's
+    writeIdx = curLastIndex + numAs;
+    for (int i = static_cast<int>(curLastIndex); i >= 0; --i)
+    {
+        if (s[i] == 'a')
+        {
+            s[writeIdx--] = 'd';
+            s[writeIdx--] = 'd';
+        }
+        else
+            s[writeIdx--] = s[i];
+    }
+    return curLastIndex + numAs + 1;
 }
 
 // (7.5)

@@ -35,6 +35,9 @@
 #include "Chapter5.h"
 #include "Chapter6.h"
 #include "Chapter7.h"
+#include "Chapter8.h"
+#include "Chapter9.h"
+#include "Chapter10.h"
 
 //
 // MAIN!
@@ -42,7 +45,6 @@
 
 int main()
 {
-    std::vector<char> vec{'a','c','d','b','b','c','a'};
-    std::vector<char> res = replaceAndRemove(vec);
+
     return 0;
 }
